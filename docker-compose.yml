@@ -1,0 +1,12 @@
+version: '3'
+services: 
+  go:
+      container_name: go
+      build:
+          context: ./Docker/go
+          args:
+              - GOLANG_VERSION=${GOLANG_VERSION}
+      volumes:
+          - ${APP_CODE_PATH_HOST}:${APP_CODE_PATH_CONTAINER}
+      working_dir: ${APP_CODE_PATH_CONTAINER}
+      tty: true

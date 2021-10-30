@@ -1,0 +1,4 @@
+ARG GOLANG_VERSION=latest
+
+FROM golang:${GOLANG_VERSION}
+RUN apt update
